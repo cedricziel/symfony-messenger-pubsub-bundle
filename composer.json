@@ -28,6 +28,9 @@
     "require-dev": {
         "symfony/phpunit-bridge": "^5.1"
     },
+    "scripts": {
+        "test": "@php vendor/bin/simple-phpunit"
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
