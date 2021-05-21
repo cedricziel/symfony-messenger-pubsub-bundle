@@ -6,5 +6,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class GoogleCloudPubSubMessengerBundle extends Bundle
 {
-
 }

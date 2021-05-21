@@ -1,3 +1,8 @@
 framework:
   router:
     utf8: true
+  messenger:
+    transports:
+      my-pubsub-transport: 'pubsub://my-project/my-topic?subscription=my-subscription'
+      sync: 'sync://'
+  test: true

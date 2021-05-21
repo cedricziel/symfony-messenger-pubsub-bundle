@@ -1,0 +1,3 @@
+services:
+  CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\App\Handler\DummyMessageHandler:
+    tags: [messenger.message_handler]

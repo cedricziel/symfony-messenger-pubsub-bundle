@@ -12,11 +12,8 @@ use Symfony\Component\Routing\RouteCollectionBuilder;
 
 final class AppKernel extends Kernel
 {
-    use MicroKernelTrait;
-
-    public function __construct()
-    {
-        parent::__construct('test', true);
+    use MicroKernelTrait {
+        MicroKernelTrait::registerContainerConfiguration as parentRegisterContainerConfiguration;
     }
 
     public function registerBundles()
@@ -27,14 +24,31 @@ final class AppKernel extends Kernel
         ];
     }
 
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        $this->parentRegisterContainerConfiguration($loader);
+
+        $loader->load($this->getProjectDir().'/config/services.yaml');
+    }
+
     public function getCacheDir(): string
     {
-        return $this->getBaseDir().'cache';
+        return $this->getBaseDir() . 'cache';
+    }
+
+    private function getBaseDir(): string
+    {
+        return sys_get_temp_dir() . '/pubsub-messenger-bundle/' . spl_object_id($this) . '/var/';
     }
 
     public function getLogDir(): string
     {
-        return $this->getBaseDir().'log';
+        return $this->getBaseDir() . 'log';
+    }
+
+    protected function configureRoutes(RouteCollectionBuilder $routes): void
+    {
+        $routes->import($this->getProjectDir() . '/config/routes.yaml');
     }
 
     public function getProjectDir(): string
@@ -42,18 +56,8 @@ final class AppKernel extends Kernel
         return __DIR__;
     }
 
-    protected function configureRoutes(RouteCollectionBuilder $routes): void
-    {
-        $routes->import($this->getProjectDir().'/config/routes.yaml');
-    }
-
     protected function configureContainer(ContainerBuilder $containerBuilder, LoaderInterface $loader): void
     {
-        $loader->load($this->getProjectDir().'/config/config.yaml');
-    }
-
-    private function getBaseDir(): string
-    {
-        return sys_get_temp_dir().'/pubsub-messenger-bundle/var/';
+        $loader->load($this->getProjectDir() . '/config/config.yaml');
     }
 }

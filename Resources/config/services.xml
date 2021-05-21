@@ -7,7 +7,10 @@
     <services>
         <service id="CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Controller\PushController">
             <argument type="service" id="messenger.default_bus"/>
-            <argument type="service" id="?"/>
+            <argument type="service" id="messenger.receiver_locator" />
+            <argument type="service" id="messenger.transport.native_php_serializer"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="logger"/>
 
             <tag name="controller.service_arguments"/>
         </service>
