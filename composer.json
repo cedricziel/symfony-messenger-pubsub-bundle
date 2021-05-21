@@ -1,0 +1,36 @@
+{
+    "name": "cedricziel/symfony-messenger-pubsub-bundle",
+    "description": "Symfony Messenger Bundle adding Google Cloud Pub/Sub support",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cedric Ziel",
+            "email": "mail@cedric-ziel.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CedricZiel\\Symfony\\Bundle\\GoogleCloudPubSubMessenger\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.5",
+        "cedricziel/messenger-pubsub": "1.0.x-dev",
+        "psr/log": "^1.0",
+        "symfony/config": "^4.4|^5.0",
+        "symfony/dependency-injection": "^4.4|^5.0",
+        "symfony/http-foundation": "^4.4|^5.0",
+        "symfony/http-kernel": "^5.0",
+        "symfony/messenger": "^5.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.1"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
