@@ -81,7 +81,7 @@ class PushController
             throw new BadRequestHttpException('No message present in request.');
         }
 
-        $rawMessage = json_decode($content, true, 512, JSON_THROW_ON_ERROR);
+        $rawMessage = json_decode($content, true);
         if ($rawMessage === null) {
             throw new BadRequestHttpException('Unable to deserialize message.');
         }
