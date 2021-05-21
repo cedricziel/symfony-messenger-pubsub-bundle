@@ -3,10 +3,8 @@
 namespace CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\Controller;
 
 use CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\App\AppKernel;
-use CedricZiel\Symfony\Messenger\Bridge\GcpPubSub\Tests\Fixtures\DummyMessage;
-use Google\Cloud\PubSub\Message;
-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Messenger\DummyMessage;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\Envelope;
