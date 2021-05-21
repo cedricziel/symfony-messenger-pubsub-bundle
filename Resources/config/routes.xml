@@ -4,7 +4,8 @@
         xsi:schemaLocation="http://symfony.com/schema/routing
         https://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="messenger_push"
-           path="/_messenger/{subscription}"
+    <route id="messenger_pubsub_push"
+           path="/_messenger/pubsub/{subscription}"
+           methods="POST"
            controller="CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Controller\PushController::__invoke"/>
 </routes>

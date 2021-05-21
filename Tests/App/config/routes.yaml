@@ -1,0 +1,3 @@
+_pubsub_push:
+  resource: '@GoogleCloudPubSubMessengerBundle/Resources/config/routes.xml'
+  prefix: /
