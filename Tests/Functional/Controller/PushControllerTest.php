@@ -1,6 +1,6 @@
 <?php
 
-namespace CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\Controller;
+namespace CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\Functional\Controller;
 
 use CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\App\AppKernel;
 use CedricZiel\Symfony\Bundle\GoogleCloudPubSubMessenger\Tests\Fixtures\DummyMessage;
